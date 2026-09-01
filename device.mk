@@ -24,6 +24,11 @@ PRODUCT_CHARACTERISTICS := nosdcard
 # Inherit from motorola sm8550-common
 $(call inherit-product, device/motorola/sm8550-common/common.mk)
 
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay-voltage
+
 # Overlay
 PRODUCT_PACKAGES += \
     FrameworksResDevice \

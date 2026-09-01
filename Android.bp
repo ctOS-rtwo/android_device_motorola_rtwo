@@ -6,6 +6,7 @@
 soong_namespace {
     imports: [
         "device/motorola/sm8550-common",
+        "hardware/voltage/interfaces/power-libperfmgr",
         "hardware/motorola",
     ],
 }
