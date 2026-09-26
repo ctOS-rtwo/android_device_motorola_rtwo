@@ -13,6 +13,23 @@ $(call inherit-product, device/motorola/rtwo/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+# Axion about:
+AXION_CAMERA_REAR_INFO := 50,50,12
+AXION_CAMERA_FRONT_INFO := 15.3
+AXION_MAINTAINER := @joao-lisa
+AXION_PROCESSOR :=Snapdragon®_8_Gen_2
+
+# Axion flags:
+TARGET_DISABLE_EPPE := true
+TARGET_ENABLE_BLUR := true
+TARGET_INCLUDE_AXFX := true
+PRODUCT_NO_CAMERA := true
+TARGET_SUPPORTED_REFRESH_RATES := 60,90,120,165
+BYPASS_CHARGE_SUPPORTED := true
+TARGET_SUPPORT_BOOT_ANIMATIONS := true
+TARGET_HAS_UDFPS := true
+TARGET_NEEDS_VULKAN_MEDIA_FIX := true
+
 PRODUCT_NAME := lineage_rtwo
 PRODUCT_DEVICE := rtwo
 PRODUCT_MANUFACTURER := motorola

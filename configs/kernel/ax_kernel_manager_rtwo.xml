@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kernel-manager>
+
+    <cpu
+        id="little"
+        group="Little CPU"
+        minId="axion_min_freq"
+        maxId="axion_max_freq"
+        governorId="little_cpu_governor"
+        cpuIds="0-2"
+        node="/sys/devices/system/cpu/cpufreq/policy0" />
+
+    <cpu
+        id="big"
+        group="Big CPU"
+        minId="axion_min_freq_big"
+        maxId="axion_max_freq_big"
+        governorId="big_cpu_governor"
+        cpuIds="3-6"
+        node="/sys/devices/system/cpu/cpufreq/policy3" />
+
+    <cpu
+        id="prime"
+        group="Prime CPU"
+        minId="axion_min_freq_prime"
+        maxId="axion_max_freq_prime"
+        governorId="prime_cpu_governor"
+        cpuIds="7"
+        node="/sys/devices/system/cpu/cpufreq/policy7" />
+
+    <gpu
+        node="/sys/class/kgsl/kgsl-3d0/devfreq"
+        currentNode="/sys/class/kgsl/kgsl-3d0/gpuclk"
+        usageNode="/sys/class/kgsl/kgsl-3d0/gpu_busy_percentage"
+        availablePath="/sys/class/kgsl/kgsl-3d0/devfreq/available_frequencies"
+        frequencyMultiplier="1" />
+
+</kernel-manager>
