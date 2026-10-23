@@ -1,0 +1,37 @@
+[
+    {
+            "repository": "crdroidandroid/android_device_motorola_sm8550-common",
+        "target_path": "device/motorola/sm8550-common",
+        "branch": "17.0"
+    },
+    {
+            "repository": "crdroidandroid/android_kernel_motorola_sm8550",
+        "target_path": "kernel/motorola/sm8550",
+        "branch": "17.0"
+    },
+    {
+            "repository": "crdroidandroid/android_kernel_motorola_sm8550-modules",
+        "target_path": "kernel/motorola/sm8550-modules",
+        "branch": "17.0"
+    },
+    {
+            "repository": "crdroidandroid/android_kernel_motorola_sm8550-devicetrees",
+        "target_path": "kernel/motorola/sm8550-devicetrees",
+        "branch": "17.0"
+    },
+    {
+            "repository": "crdroidandroid/proprietary_vendor_motorola_rtwo",
+        "target_path": "vendor/motorola/rtwo",
+        "branch": "17.0"
+    },
+    {
+            "repository": "crdroidandroid/proprietary_vendor_motorola_sm8550-common",
+        "target_path": "vendor/motorola/sm8550-common",
+        "branch": "17.0"
+    },
+    {
+            "repository": "crdroidandroid/android_hardware_motorola",
+        "target_path": "hardware/motorola",
+        "branch": "16.0"
+    }
+]
