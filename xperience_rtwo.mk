@@ -5,7 +5,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/motorola/rtwo/device.mk)
 
 # Inherit from XPerience configuration
-$(call inherit-product, vendor/xperience/config/common_full_phone.mk)
+$(call inherit-product, vendor/xperience/config/common.mk)
 
 PRODUCT_NAME := xpe_rtwo
 PRODUCT_DEVICE := rtwo
