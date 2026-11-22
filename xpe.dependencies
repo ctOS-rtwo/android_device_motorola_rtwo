@@ -10,6 +10,16 @@
     "branch": "xpe-21"
   },
   {
+    "repository": "android_hardware_dolby",
+    "target_path": "hardware/dolby",
+    "branch": "17.0-rtwo"
+  },
+  {
+    "repository": "android_packages_apps_LunarisDolby",
+    "target_path": "packages/apps/LunarisDolby",
+    "branch": "17.0"
+  },
+  {
     "repository": "android_kernel_motorola_sm8550",
     "target_path": "kernel/motorola/sm8550",
     "branch": "xpe-21"
