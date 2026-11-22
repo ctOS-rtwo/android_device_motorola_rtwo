@@ -20,6 +20,11 @@
     "branch": "17.0"
   },
   {
+    "repository": "android_packages_resources_apps",
+    "target_path": "packages/apps/CrDroidResources",
+    "branch": "16.0"
+  },
+  {
     "repository": "android_kernel_motorola_sm8550",
     "target_path": "kernel/motorola/sm8550",
     "branch": "xpe-21"
