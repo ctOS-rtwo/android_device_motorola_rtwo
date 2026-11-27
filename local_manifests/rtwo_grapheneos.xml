@@ -15,12 +15,10 @@
           revision="refs/heads/test" />
 
   <project path="device/motorola/rtwo" name="android_device_motorola_rtwo" remote="ctos-rtwo" />
-  <project path="device/motorola/sm8550-common" name="android_device_motorola_sm8550-common" remote="ctos-rtwo">
-    <linkfile src="qcom-build" dest="vendor/qcom-build" />
-  </project>
+  <project path="device/motorola/sm8550-common" name="android_device_motorola_sm8550-common" remote="ctos-rtwo" />
   <project path="hardware/motorola" name="android_hardware_motorola" remote="ctos-rtwo" />
   <project path="kernel/motorola/sm8550" name="android_kernel_motorola_sm8550" remote="ctos-rtwo" />
-  <project path="kernel/motorola/sm8550-devicetrees" name="android_kernel_motorola_sm8550-devicetrees" remote="ctos-rtwo" revision="refs/heads/17.0" />
+  <project path="kernel/motorola/sm8550-devicetrees" name="android_kernel_motorola_sm8550-devicetrees" remote="ctos-rtwo" />
   <project path="kernel/motorola/sm8550-modules" name="android_kernel_motorola_sm8550-modules" remote="ctos-rtwo" revision="refs/heads/17.0" />
   <project path="vendor/motorola/rtwo" name="proprietary_vendor_motorola_rtwo" remote="ctos-rtwo" revision="refs/heads/17.0" />
   <project path="vendor/motorola/sm8550-common" name="proprietary_vendor_motorola_sm8550-common" remote="ctos-rtwo" revision="refs/heads/17.0" />
@@ -85,6 +83,6 @@
   <project path="vendor/qcom/opensource/vibrator" name="android_vendor_qcom_opensource_vibrator" remote="lineage" />
 
   <!-- Inline Kernel Build Prebuilts -->
-  <project path="prebuilts/clang/kernel/linux-x86/clang-r416183b" name="android_prebuilts_clang_kernel_linux-x86_clang-r416183b" remote="lineage" revision="lineage-20.0" clone-depth="1" />
   <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" remote="aosp" revision="main-kernel-2025" clone-depth="1" />
+  <project path="prebuilts/tools-lineage" name="android_prebuilts_tools-lineage" remote="lineage" clone-depth="1" />
 </manifest>
