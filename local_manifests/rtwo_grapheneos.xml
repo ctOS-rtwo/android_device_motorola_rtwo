@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Local manifest for building GrapheneOS 17 on Motorola Edge 40 Pro (rtwo).
+  Place in <grapheneos-root>/.repo/local_manifests/rtwo.xml alongside copying
+  or symlinking device/, hardware/, kernel/, and vendor/ from /root/rtwo/.
+-->
+<manifest>
+  <remote name="lineage"
+          fetch="https://github.com/LineageOS/"
+          revision="refs/heads/lineage-24.0" />
+
+  <!-- Motorola Edge 40 Pro (rtwo) Trees (branch: test) -->
+  <remote name="ctos-rtwo"
+          fetch="https://github.com/ctOS-rtwo/"
+          revision="refs/heads/test" />
+
+  <project path="device/motorola/rtwo" name="android_device_motorola_rtwo" remote="ctos-rtwo" />
+  <project path="device/motorola/sm8550-common" name="android_device_motorola_sm8550-common" remote="ctos-rtwo">
+    <linkfile src="qcom-build" dest="vendor/qcom-build" />
+  </project>
+  <project path="hardware/motorola" name="android_hardware_motorola" remote="ctos-rtwo" />
+  <project path="kernel/motorola/sm8550" name="android_kernel_motorola_sm8550" remote="ctos-rtwo" />
+  <project path="kernel/motorola/sm8550-devicetrees" name="android_kernel_motorola_sm8550-devicetrees" remote="ctos-rtwo" revision="refs/heads/17.0" />
+  <project path="kernel/motorola/sm8550-modules" name="android_kernel_motorola_sm8550-modules" remote="ctos-rtwo" revision="refs/heads/17.0" />
+  <project path="vendor/motorola/rtwo" name="proprietary_vendor_motorola_rtwo" remote="ctos-rtwo" revision="refs/heads/17.0" />
+  <project path="vendor/motorola/sm8550-common" name="proprietary_vendor_motorola_sm8550-common" remote="ctos-rtwo" revision="refs/heads/17.0" />
+
+  <!-- Remove AOSP QCOM WLAN to use QCOM CAF WLAN -->
+  <remove-project name="platform/hardware/qcom/wlan" />
+
+  <!-- Google Pixel libperfmgr Power HAL -->
+  <project path="hardware/google/pixel" name="android_hardware_google_pixel" remote="lineage" />
+
+  <!-- NXP NFC & Secure Element HALs -->
+  <project path="hardware/nxp/nfc" name="android_hardware_nxp_nfc" remote="lineage" />
+  <project path="hardware/nxp/secure_element" name="android_hardware_nxp_secure_element" remote="lineage" />
+
+  <!-- Qualcomm SELinux Policies -->
+  <project path="device/qcom/sepolicy" name="android_device_qcom_sepolicy" remote="lineage" />
+  <project path="device/qcom/sepolicy_vndr/sm8550" name="android_device_qcom_sepolicy_vndr" remote="lineage" revision="lineage-24.0-caf-sm8550" />
+
+  <!-- Qualcomm Common & External Dependencies -->
+  <project path="external/ant-wireless/hidl" name="android_external_ant-wireless_hidl" remote="lineage" />
+  <project path="external/json-c" name="android_external_json-c" remote="lineage" />
+  <project path="hardware/qcom-caf/bootctrl" name="android_hardware_qcom_bootctrl" remote="lineage" revision="lineage-24.0-caf" />
+  <project path="hardware/qcom-caf/common" name="android_hardware_qcom-caf_common" remote="lineage">
+    <linkfile src="os_pickup_aosp.mk" dest="hardware/qcom/Android.mk" />
+    <linkfile src="os_pickup_sepolicy_vndr.mk" dest="device/qcom/sepolicy_vndr/SEPolicy.mk" />
+    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8550/Android.bp" />
+  </project>
+
+  <!-- Qualcomm SM8550 (kalama) CAF HALs -->
+  <project path="hardware/qcom-caf/sm8550/audio/agm" name="android_vendor_qcom_opensource_agm" remote="lineage" revision="lineage-24.0-caf-sm8550" />
+  <project path="hardware/qcom-caf/sm8550/audio/graphservices" name="android_vendor_qcom_opensource_audioreach-graphservices" remote="lineage" revision="lineage-24.0-caf-sm8550" />
+  <project path="hardware/qcom-caf/sm8550/audio/pal" name="android_vendor_qcom_opensource_arpal-lx" remote="lineage" revision="lineage-24.0-caf-sm8550" />
+  <project path="hardware/qcom-caf/sm8550/audio/primary-hal" name="android_hardware_qcom_audio-ar" remote="lineage" revision="lineage-24.0-caf-sm8550" />
+  <project path="hardware/qcom-caf/sm8550/data-ipa-cfg-mgr" name="android_vendor_qcom_opensource_data-ipa-cfg-mgr" remote="lineage" revision="lineage-24.0-caf-sm8550" />
+  <project path="hardware/qcom-caf/sm8550/dataipa" name="android_vendor_qcom_opensource_dataipa" remote="lineage" revision="lineage-24.0-caf-sm8550" />
+  <project path="hardware/qcom-caf/sm8550/display" name="android_hardware_qcom_display" remote="lineage" revision="lineage-24.0-caf-sm8550" />
+  <project path="hardware/qcom-caf/thermal" name="android_hardware_qcom_thermal" remote="lineage" />
+  <project path="hardware/qcom-caf/wlan" name="android_hardware_qcom_wlan" remote="lineage" revision="lineage-24.0-caf" />
+
+  <!-- Qualcomm Opensource & Telephony -->
+  <project path="vendor/codeaurora/telephony" name="android_vendor_codeaurora_telephony" remote="lineage" />
+  <project path="vendor/qcom/opensource/audio-hal/st-hal" name="android_vendor_qcom_opensource_audio-hal_st-hal" remote="lineage" />
+  <project path="vendor/qcom/opensource/audio-hal/st-hal-ar" name="android_vendor_qcom_opensource_audio-hal_st-hal-ar" remote="lineage" />
+  <project path="vendor/qcom/opensource/commonsys-intf/audio" name="android_vendor_qcom_opensource_audio-commonsys-intf" remote="lineage" />
+  <project path="vendor/qcom/opensource/commonsys-intf/display" name="android_vendor_qcom_opensource_display-commonsys-intf" remote="lineage" />
+  <project path="vendor/qcom/opensource/commonsys/audio" name="android_vendor_qcom_opensource_audio" remote="lineage" />
+  <project path="vendor/qcom/opensource/commonsys/display" name="android_vendor_qcom_opensource_display-commonsys" remote="lineage" />
+  <project path="vendor/qcom/opensource/commonsys/fm" name="android_vendor_qcom_opensource_fm-commonsys" remote="lineage" />
+  <project path="vendor/qcom/opensource/commonsys/wfd" name="android_vendor_qcom_opensource_wfd-commonsys" remote="lineage" />
+  <project path="vendor/qcom/opensource/core-utils-sys" name="android_vendor_qcom_opensource_core-utils-sys" remote="lineage" />
+  <project path="vendor/qcom/opensource/core-utils-vendor" name="android_vendor_qcom_opensource_core-utils-vendor" remote="lineage" />
+  <project path="vendor/qcom/opensource/dataservices" name="android_vendor_qcom_opensource_dataservices" remote="lineage" />
+  <project path="vendor/qcom/opensource/display" name="android_vendor_qcom_opensource_display" remote="lineage" />
+  <project path="vendor/qcom/opensource/healthd-ext" name="android_vendor_qcom_opensource_healthd-ext" remote="lineage" />
+  <project path="vendor/qcom/opensource/interfaces" name="android_vendor_qcom_opensource_interfaces" remote="lineage" />
+  <project path="vendor/qcom/opensource/libfmjni" name="android_vendor_qcom_opensource_libfmjni" remote="lineage" />
+  <project path="vendor/qcom/opensource/libqspa" name="android_vendor_qcom_opensource_libqspa" remote="lineage" />
+  <project path="vendor/qcom/opensource/power" name="android_vendor_qcom_opensource_power" remote="lineage" />
+  <project path="vendor/qcom/opensource/thermal-engine" name="android_vendor_qcom_opensource_thermal-engine" remote="lineage" />
+  <project path="vendor/qcom/opensource/usb" name="android_vendor_qcom_opensource_usb" remote="lineage" />
+  <project path="vendor/qcom/opensource/vibrator" name="android_vendor_qcom_opensource_vibrator" remote="lineage" />
+
+  <!-- Inline Kernel Build Prebuilts -->
+  <project path="prebuilts/clang/kernel/linux-x86/clang-r416183b" name="android_prebuilts_clang_kernel_linux-x86_clang-r416183b" remote="lineage" revision="lineage-20.0" clone-depth="1" />
+  <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" remote="aosp" revision="main-kernel-2025" clone-depth="1" />
+</manifest>

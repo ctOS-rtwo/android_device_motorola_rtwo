@@ -27,7 +27,6 @@ $(call inherit-product, device/motorola/sm8550-common/common.mk)
 # Overlay
 PRODUCT_PACKAGES += \
     FrameworksResDevice \
-    LineageSystemUIDevice \
     ProductFrameworksResDevice \
     SettingsResDevice \
     SystemUIResDevice
@@ -61,9 +60,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/goodix_ts.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/goodix_ts.kl
 
-# LiveDisplay
-$(call soong_config_set_bool,livedisplay_sysfs,enable_af,true)
-
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc-service.nxp \
@@ -86,12 +82,6 @@ PRODUCT_PACKAGES += \
 # Thermal
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine-rtwo-game-perf.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-rtwo.conf
-
-# PowerShare
-PRODUCT_PACKAGES += \
-    vendor.lineage.powershare-service.default
-
-$(call soong_config_set,lineage_powershare,powershare_path,/sys/class/power_supply/wireless/device/tx_mode)
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)

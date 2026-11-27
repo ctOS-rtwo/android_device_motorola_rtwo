@@ -6,4 +6,7 @@
 <resources>
     <!-- The radius of the enrollment progress bar, in dp -->
     <integer name="config_udfpsEnrollProgressBar">65</integer>
+
+    <!-- Show Smooth Display (peak refresh rate) toggle in GrapheneOS Settings -->
+    <bool name="config_show_smooth_display">true</bool>
 </resources>
